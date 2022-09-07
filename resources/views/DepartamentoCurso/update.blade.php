@@ -1,4 +1,4 @@
-@extends('welcome')
+@extends('layouts.app')
 
 @section('content')
     
@@ -17,7 +17,7 @@
                                 </li>
                                 <li class="breadcrumb-item"><a href="">Actualizar</a>
                                 </li>
-                            </ol>
+                            </ol> 
                         </div>
                     </div>
                 </div>
@@ -60,5 +60,6 @@
              </div>
         </form>
     </div>
-    
+    @include('layouts.Footer')
+
     @endsection

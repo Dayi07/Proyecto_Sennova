@@ -52,6 +52,13 @@ class PaisController extends Controller
         return redirect('Pais/view');
     }
 
+    public function resuljson(){
+        $verp =  App\PaisCurso::All();
+        $datos = array('data' => $verp);
+        return $datos;
+    }
+
+
 
 
 }

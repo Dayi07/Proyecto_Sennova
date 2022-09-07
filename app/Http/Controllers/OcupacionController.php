@@ -61,4 +61,14 @@ class OcupacionController extends Controller
 
         return redirect('Ocupacion/view');
     }
+
+    public function resuljson(){
+        $verp = DB::table('ocupacions')
+        ->join('sectors', 'sectors.id', '=', 'ocupacions.id_sector')
+        ->select('ocupacions.*', 'sectors.SECTO_Nombre')
+        ->get();
+        $datos = array('data' => $verp);
+        return $datos;
+    }
+
 }

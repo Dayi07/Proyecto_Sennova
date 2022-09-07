@@ -1,4 +1,4 @@
-@extends('welcome')
+@extends('layouts.app')
 
 @section('content')
 
@@ -12,7 +12,7 @@
                         <div class="col-12"> 
                             <h2 class="content-header-title float-start mb-0">Empresa</h2>
                             <div class="breadcrumb-wrapper">
-                                <ol class="breadcrumb">
+                                <ol class="breadcrumb"> 
                                     <li class="breadcrumb-item"><a href="{{ route('ViewEmpresa') }}">Listado</a>
                                     </li>
                                     <li class="breadcrumb-item"><a href="">Actualizar</a>
@@ -60,5 +60,6 @@
             </div>
         </div>
     </div>
+    @include('layouts.Footer')
 
 @endsection

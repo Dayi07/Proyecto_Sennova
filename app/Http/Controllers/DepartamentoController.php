@@ -59,5 +59,12 @@ class DepartamentoController extends Controller
 
     }
 
-
+    public function resuljson(){
+        $verp = DB::table('departamento_cursos')
+        ->join('pais_cursos', 'pais_cursos.id', '=', 'departamento_cursos.id_pais')
+        ->select('departamento_cursos.*', 'pais_cursos.PAISC_Nombre')
+        ->get();
+        $datos = array('data' => $verp);
+        return $datos;
+    }
 }

@@ -51,4 +51,11 @@ class JornadaController extends Controller
 
         return redirect('Jornada/view');
     }
+
+    public function resuljson(){
+        $verp = App\Jornada::all();
+        $datos = array('data' => $verp);
+        return $datos;
+    }
+ 
 }

@@ -7,7 +7,7 @@ use App;
 use Illuminate\Support\Facades\DB;
 
 class AprendizController extends Controller
-{
+{ 
     public function ViewInsert()
     {
         $ficha = App\Ficha::all();
@@ -26,7 +26,7 @@ class AprendizController extends Controller
         $aprendiz->APREN_Estado = $apre->APREN_Estado;
         $aprendiz->APREN_Telefono = $apre->APREN_Telefono;
         $aprendiz->id_ficha = $apre->id_ficha;
-        $aprendiz->save();
+        $aprendiz->save(); 
 
         return redirect('Aprendiz/view');
     }
@@ -73,5 +73,15 @@ class AprendizController extends Controller
         return redirect('Aprendiz/view');
 
     }
+
+    public function resuljson(){
+        $verp = DB::table('aprendizs')
+        ->join('fichas', 'fichas.id', '=', 'aprendizs.id_ficha')
+        ->select('aprendizs.*', 'fichas.FICHA_Identificador_Unico')
+        ->get();
+        $datos = array('data' => $verp);
+        return $datos;
+    }
+
 }
  

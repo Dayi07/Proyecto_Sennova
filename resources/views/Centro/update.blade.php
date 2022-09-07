@@ -1,6 +1,6 @@
-@extends('welcome')
+@extends('layouts.app')
 
-@section('content')
+@section('content') 
     
 <div class="app-content content ">
     <div class="content-overlay"></div>
@@ -58,5 +58,6 @@
              </div>
         </form>
     </div>
-    
+    @include('layouts.Footer')
+
     @endsection

@@ -29,6 +29,7 @@ Route::get('Pais/view', 'PaisController@View')->name('ViewPais');
 Route::get('Pais/delete/{id}', 'PaisController@DeletePais');
 Route::get('Pais/update/{id}', 'PaisController@DatosUpdate')->name('ViewUpdate');
 Route::post('Pais/update', 'PaisController@Update')->name('UpdatePais');
+Route::get('Pais/json','PaisController@resuljson')->name('listpj');
 #endregion
 
 #region municipio
@@ -38,6 +39,7 @@ Route::get('Municipio/view', 'MunicipioController@ViewMun')->name('ViewMunicipio
 Route::get('Municipio/delete/{id}', 'MunicipioController@DeleteMun');
 Route::get('Municipio/update/{id}', 'MunicipioController@DatosUpdate')->name('DatosUpdateMun');
 Route::post('Municipio/update', 'MunicipioController@Update')->name('UpdateMunicipio');
+Route::get('Municipio/json','MunicipioController@resuljson')->name('listmj');
 #endregion
 
 #region departamento
@@ -47,6 +49,7 @@ Route::post('Departamento/insert', 'DepartamentoController@Insert')->name('Inser
 Route::get('Departamento/delete/{id}', 'DepartamentoController@DeleteDep');
 Route::get('Departamento/update/{id}', 'DepartamentoController@DatosUpdate')->name('DatosUpdate');
 Route::post('Departamento/update', 'DepartamentoController@UpdateDep')->name('UpdateDep');
+Route::get('Departamento/json','DepartamentoController@resuljson')->name('listdj');
 #endregion
 
 #region jornada
@@ -56,6 +59,7 @@ Route::get('Jornada/view', 'JornadaController@ViewJornada')->name('ViewJornada')
 Route::get('Jornada/delete/{id}', 'JornadaController@DeleteJornada')->name('DeleteJornada');
 Route::get('Jornada/update/{id}', 'JornadaController@DatosUpdate')->name('ViewUpdateJornada');
 Route::post('Jornada/update', 'JornadaController@UpdateJornada')->name('UpdateJornada');
+Route::get('Jornada/json','JornadaController@resuljson')->name('listjj');
 #endregion
  
 #region sector
@@ -65,6 +69,7 @@ Route::get('Sector/view', 'SectorController@ViewSector')->name('ViewSector');
 Route::get('Sector/delete/{id}', 'SectorController@DeleteSector')->name('DeleteSector');
 Route::get('Sector/update/{id}', 'SectorController@DatosUpdate')->name('DatosUpdateSector');
 Route::post('Sector/update', 'SectorController@UpdateSector')->name('SectorUpdateBD');
+Route::get('Sector/json','SectorController@resuljson')->name('listsj');
 #endregion 
 
 #region curso
@@ -74,6 +79,7 @@ Route::get('Curso/view', 'CursoController@ViewCurso')->name('ViewCurso');
 Route::get('Curso/delete/{id}', 'CursoController@DeleteCurso')->name('DeleteCurso');
 Route::get('Curso/update/{id}', 'CursoController@DatosUpdate')->name('ViewUpdateCurso');
 Route::post('Curso/update', 'CursoController@UpdateCurso')->name('UpdateCurso');
+Route::get('Curso/json','CursoController@resuljson')->name('listcj');
 #endregion
 
 #region empresa
@@ -83,6 +89,7 @@ Route::get('Empresa/view', 'EmpresaController@ViewEmpresa')->name('ViewEmpresa')
 Route::get('Empresa/delete/{id}', 'EmpresaController@DeleteEmpresa')->name('DeleteEmpresa');
 Route::get('Empresa/update/{id}', 'EmpresaController@DatosUpdate')->name('ViewUpdateEmpresa');
 Route::post('Empresa/update', 'EmpresaController@UpdateEmpresa')->name('UpdateEmpresas');
+Route::get('Empresa/json','EmpresaController@resuljson')->name('listej');
 #endregion
 
 #region convenio
@@ -92,6 +99,7 @@ Route::get('Convenio/view', 'ConvenioController@ViewConvenio')->name('ViewConven
 Route::get('Convenio/delete/{id}', 'ConvenioController@Deleteconvenio')->name('DeleteConvenio');
 Route::get('Convenio/update/{id}', 'ConvenioController@DatosUpdate')->name('ViewUpdateConvenio');
 Route::post('Convenio/update', 'ConvenioController@UpdateConvenio')->name('UpdateConvenio');
+Route::get('Convenio/json','ConvenioController@resuljson')->name('listcnj');
 #endregion
 
 #region programa de formacion
@@ -103,6 +111,7 @@ Route::get('ProgramaFormacion/update/{id}', 'ProgramaFormController@DatosUpdate'
 Route::post('ProgramaFormacion/update', 'ProgramaFormController@UpdatePrograma')->name('UpdateProgramaForm');
 Route::get('ProgramaFormacion/updateFile/{id}', 'ProgramaFormController@ViewUpdateFile')->name('ViewUpdateFile');
 Route::post('ProgramaFormacion/updateFile', 'ProgramaFormController@UpdateFile')->name('UpdateFilePrograma');
+Route::get('ProgramaFormacion/json','ProgramaFormController@resuljson')->name('listpfj');
 #endregion
  
 #region programa especial
@@ -112,6 +121,7 @@ Route::get('ProgramaEspecial/view', 'ProgramaEspController@ViewEspecial')->name(
 Route::get('ProgramaEspecial/delete/{id}', 'ProgramaEspController@DeleteEspecial')->name('DeleteEspecial');
 Route::get('ProgramaEspecial/update/{id}', 'ProgramaEspController@ViewUpdate')->name('ViewUpdateEspecial');
 Route::post('ProgramaEspecial/update', 'ProgramaEspController@UpdateEspecial')->name('UpdateEspecial');
+Route::get('ProgramaEspecial/json','ProgramaEspController@resuljson')->name('listpej');
 #endregion
 
 #region Regional
@@ -121,6 +131,7 @@ Route::get('Regional/view', 'RegionalController@ViewRegional')->name('ViewRegion
 Route::get('Regional/delete/{id}', 'RegionalController@DeleteRegional')->name('DeleteRegional');
 Route::get('Regional/update/{id}', 'RegionalController@ViewUpdate')->name('ViewUpdateRegional');
 Route::post('Regional/update', 'RegionalController@UpdateRegional')->name('UpdateRegional');
+Route::get('Regional/json','RegionalController@resuljson')->name('listrj');
 #endregion
 
 #region Centro
@@ -130,6 +141,7 @@ Route::get('Centro/view', 'CentroController@ViewCentro')->name('ViewCentro');
 Route::get('Centro/delete/{id}', 'CentroController@DeleteCentro')->name('DeleteCentro');
 Route::get('Centro/update/{id}', 'CentroController@ViewUpdate')->name('ViewUpdateCentro');
 Route::post('Centro/update', 'CentroController@UpdateCentro')->name('UpdateCentro');
+Route::get('Centro/json','CentroController@resuljson')->name('listctj');
 #endregion
 
 #region Ficha
@@ -139,6 +151,7 @@ Route::get('Ficha/view', 'FichaController@ViewFicha')->name('ViewFicha');
 Route::get('Ficha/delete/{id}', 'FichaController@DeleteFicha')->name('DeleteFicha');
 Route::get('Ficha/update/{id}', 'FichaController@ViewUpdate')->name('ViewUpdateFicha');
 Route::post('Ficha/update', 'FichaController@UpdateFicha')->name('UpdateFicha');
+Route::get('Ficha/json','FichaController@resuljson')->name('listfj');
 #endregion
 
 #region Aprendiz
@@ -148,6 +161,7 @@ Route::get('Aprendiz/view', 'AprendizController@ViewAprendiz')->name('ViewAprend
 Route::get('Aprendiz/delete/{id}', 'AprendizController@DeleteAprendiz')->name('DeleteAprendiz');
 Route::get('Aprendiz/update/{id}', 'AprendizController@ViewUpdate')->name('ViewUpdateAprendiz');
 Route::post('Aprendiz/update', 'AprendizController@UpdateAprendiz')->name('UpdateAprendiz');
+Route::get('Aprendiz/json','AprendizController@resuljson')->name('listaj');
 #endregion
 
 #region Ocupacion
@@ -157,6 +171,7 @@ Route::get('Ocupacion/view', 'OcupacionController@ViewOcupacion')->name('ViewOcu
 Route::get('Ocupacion/delete/{id}', 'OcupacionController@DeleteOcupacion')->name('DeleteOcupacion');
 Route::get('Ocupacion/update/{id}', 'OcupacionController@ViewUpdate')->name('ViewUpdateOcupacion');
 Route::post('Ocupacion/update', 'OcupacionController@UpdateOcupacion')->name('UpdateOcupacion');
+Route::get('Ocupacion/json','OcupacionController@resuljson')->name('listoj');
 #endregion
 
 #region Hora
@@ -166,4 +181,5 @@ Route::get('Hora/view', 'HoraController@ViewHora')->name('ViewHora');
 Route::get('Hora/delete/{id}', 'HoraController@DeleteHora')->name('DeleteHora');
 Route::get('Hora/update/{id}', 'HoraController@ViewUpdate')->name('ViewUpdateHora');
 Route::post('Hora/update', 'HoraController@UpdateHora')->name('UpdateHora');
+Route::get('Hora/json','HoraController@resuljson')->name('listhj');
 #endregion

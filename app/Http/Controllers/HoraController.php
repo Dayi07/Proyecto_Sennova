@@ -69,4 +69,14 @@ class HoraController extends Controller
         return redirect('Hora/view');
 
     }
+
+    public function resuljson(){
+        $verp = DB::table('horas')
+        ->join('ocupacions', 'ocupacions.id', '=', 'horas.id_ocupacion')
+        ->select('horas.*', 'ocupacions.OCUPA_Nombre')
+        ->get();
+        $datos = array('data' => $verp);
+        return $datos;
+    }
+
 }

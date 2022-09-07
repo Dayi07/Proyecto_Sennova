@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App;
 use Illuminate\Support\Facades\DB;
-
+ 
 class CentroController extends Controller
 {
     public function ViewInsert()
@@ -57,5 +57,14 @@ class CentroController extends Controller
         $centro->update();
 
         return redirect('Centro/view');
+    }
+
+    public function resuljson(){
+        $verp = DB::table('centros')
+        ->join('regionals', 'regionals.id', '=', 'centros.id_regional')
+        ->select('centros.*', 'regionals.REGIO_Nombre')
+        ->get();
+        $datos = array('data' => $verp);
+        return $datos;
     }
 } 

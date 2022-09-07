@@ -54,5 +54,11 @@ class EmpresaController extends Controller
 
         return redirect('Empresa/view');
     }
+
+    public function resuljson(){
+        $verp = App\Empresa::all();
+        $datos = array('data' => $verp);
+        return $datos;
+    }
 }
  

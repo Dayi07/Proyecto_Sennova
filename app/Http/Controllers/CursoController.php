@@ -75,6 +75,16 @@ class CursoController extends Controller
         $curso->update();
 
         return redirect('Curso/view');
+    }
 
+    public function resuljson(){
+        $verp = DB::table('cursos')
+        ->join('municipio_cursos', 'municipio_cursos.id', '=', 'cursos.id_municipio')
+        ->join('sectors', 'sectors.id', '=', 'cursos.id_sector')
+        ->join('jornadas', 'jornadas.id', '=', 'cursos.id_jornada')
+        ->select('cursos.*', 'municipio_cursos.MUNIC_Nombre', 'sectors.SECTO_Nombre', 'jornadas.JORNA_Nombre')
+        ->get();
+        $datos = array('data' => $verp);
+        return $datos;
     }
 }

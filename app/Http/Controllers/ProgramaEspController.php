@@ -66,4 +66,15 @@ class ProgramaEspController extends Controller
 
         return redirect('ProgramaEspecial/view');
     }
+
+    
+    public function resuljson(){
+        $verp = DB::table('programa_especials')
+        ->join('sectors', 'sectors.id', '=', 'programa_especials.id_sector')
+        ->select('programa_especials.*', 'sectors.SECTO_Nombre')
+        ->get();
+        $datos = array('data' => $verp);
+        return $datos;
+    }
+
 }

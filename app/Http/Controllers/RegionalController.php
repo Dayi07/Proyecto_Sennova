@@ -51,4 +51,11 @@ class RegionalController extends Controller
         
         return redirect('Regional/view');
     }
+
+    public function resuljson(){
+        $verp = App\Regional::all();
+        $datos = array('data' => $verp);
+        return $datos;
+    }
+
 }

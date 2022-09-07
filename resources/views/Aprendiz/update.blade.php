@@ -1,4 +1,4 @@
-@extends('welcome')
+@extends('layouts.app')
 
 @section('content')
     
@@ -30,7 +30,7 @@
             @csrf
             <div class="card">
                  <div class="card-header">
-                     <h4 class="card-title">Actualizar Aprendiz</h4>
+                     <h4 class="card-title">Actualizar Aprendiz</h4> 
                  </div>
                  <div class="card-body">
                      <div class="row">
@@ -112,4 +112,6 @@
         </form>
     </div>
     
+@include('layouts.Footer')
+   
 @endsection

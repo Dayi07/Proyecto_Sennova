@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 
 class FichaController extends Controller
 {
-    public function ViewInsert()
+    public function ViewInsert() 
     {
         $jor = App\Jornada::all();
         $prog = App\ProgramaFormacion::all();
@@ -80,6 +80,17 @@ class FichaController extends Controller
 
         return redirect('Ficha/view');
 
+    }
+
+    public function resuljson(){
+        $verp = DB::table('fichas')
+        ->join('centros', 'centros.id', '=', 'fichas.id_centro')
+        ->join('jornadas', 'jornadas.id', '=', 'fichas.id_jornada')
+        ->join('programa_formacions', 'programa_formacions.id', '=', 'fichas.id_programa_formacion')
+        ->select('fichas.*', 'centros.CENTR_Nombre', 'jornadas.JORNA_Nombre', 'programa_formacions.PROGR_Nombre')
+        ->get();
+        $datos = array('data' => $verp);
+        return $datos;
     }
 }
  

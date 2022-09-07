@@ -63,7 +63,15 @@ class MunicipioController extends Controller
     } 
 
 
-
+    public function resuljson(){
+        //$verp =  App\MunicipioCurso::All();
+        $verp = DB::table('municipio_cursos')
+        ->join('departamento_cursos', 'departamento_cursos.id', '=', 'municipio_cursos.id_departamento')
+        ->select('municipio_cursos.*', 'departamento_cursos.DEPAR_Nombre')
+        ->get();
+        $datos = array('data' => $verp);
+        return $datos;
+    }
 
 
 

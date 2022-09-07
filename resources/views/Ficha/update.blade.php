@@ -1,4 +1,4 @@
-@extends('welcome')
+@extends('layouts.app')
 
 @section('content')
 
@@ -22,7 +22,7 @@
                         </div> 
                     </div>
                 </div>
-            </div>      
+            </div>       
             <div class="content-body">
                 <form action="{{ route('UpdateFicha') }}" method="POST">
                     @csrf
@@ -105,5 +105,6 @@
             </div>
         </div>
     </div>
+    @include('layouts.Footer')
 
 @endsection

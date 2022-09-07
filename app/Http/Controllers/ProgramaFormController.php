@@ -91,4 +91,14 @@ class ProgramaFormController extends Controller
 
         return redirect('ProgramaFormacion/view');
     }
+
+    public function resuljson(){
+        $verp = DB::table('programa_formacions')
+        ->join('sectors', 'sectors.id', '=', 'programa_formacions.id_sector')
+        ->select('programa_formacions.*', 'sectors.SECTO_Nombre')
+        ->get();
+        $datos = array('data' => $verp);
+        return $datos;
+    }
+
 }

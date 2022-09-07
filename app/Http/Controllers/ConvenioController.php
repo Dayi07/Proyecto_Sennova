@@ -65,5 +65,17 @@ class ConvenioController extends Controller
         $convenio->update();
 
         return redirect('Convenio/view');
+    } 
+
+    public function resuljson(){
+        $verp = DB::table('convenios')
+        ->join('empresas', 'empresas.id', '=', 'convenios.id_empresa')
+        ->join('sectors', 'sectors.id', '=', 'convenios.id_sector')
+        ->select('convenios.*', 'empresas.EMPRE_Nombre', 'sectors.SECTO_Nombre')
+        ->get();
+        $datos = array('data' => $verp);
+        return $datos;
     }
+
+
 }

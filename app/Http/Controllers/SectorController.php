@@ -50,6 +50,11 @@ class SectorController extends Controller
         $sector->update();
 
         return redirect('Sector/view');
+    }
 
+    public function resuljson(){
+        $verp = App\Sector::all();
+        $datos = array('data' => $verp);
+        return $datos;
     }
 } 
