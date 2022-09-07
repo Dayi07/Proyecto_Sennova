@@ -71,7 +71,7 @@
   function borrar(id){
     var url2 = '{{route('DeleteProgramaForm', 'id')}}';
     url2 = url2.replace('id', id);
-    location.href = url2;
+    location.href = url2;   
   }
 
 </script>

@@ -30,7 +30,7 @@
             @csrf
             <div class="card">
                  <div class="card-header">
-                     <h4 class="card-title">Insertar Municipio</h4>
+                     <h4 class="card-title">Actualizar Municipio</h4>
                  </div>
                  <div class="card-body">
                      <div class="row">
